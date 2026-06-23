@@ -1,0 +1,27 @@
+services -> snort ->system -> package manager -> available package -> installed packages -> 1> snort 2> lightsquid 3> squid 4> squidguard this done 
+2 step >services -> snort -> add -> wan em 0 ->  alert settings ✅ tick first one -> direct save 
+then go to snort interface -> ✏️<-- tick this on your rule -> wan rules -> category slection :- custom rules 
+rules (
+1) alert udp any 68 -> any 67 (msg: "kali linux detected"; content: "kali", nocase; sid:1000001;)
+2) alert icmp any any -> any any (msg: "large ping packet"; dsize:128;sid:1000003;)
+)
+
+ok now rules done!!!!
+
+now save rules -> go to snort interface -> click on refresh sumbol 
+for pinging from cmd :-ping -l <size> <IP_Address>
+
+
+
+python -m http.server 8000
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+now proxy squid :- 1>services -> procy server-> users -> add user -> authentication -> local  -> save , general -> tick 1st two boxes ->  proxy interface ->  tick 1> LAN , LOOPBACk -> save
+2> services -> squid guard -> target category -> add -> name -> domain list :- www.insta.com -> at end tick log -> save
+3> grop acl  -> add -> name.....-> in client :- 'your username which you have created ' -> target rules list -> save .
+4> services -> proxy server -> click on restart (top right 2nd button)
+5> services -> squid guard -> general settings -> greenbuttton click apply done 
